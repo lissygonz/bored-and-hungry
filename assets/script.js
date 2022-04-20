@@ -28,7 +28,10 @@ function getFoodApi() {
 //event listener for button to get activity and food image 
 $("#foodActivityButton").on("click", getBoredApi);
 $("#foodActivityButton").on("click", getFoodApi);
+<<<<<<< HEAD
 
 
 //set submission for local storage
 localStorage.setItem("response", JSON.stringify(response));
+=======
+>>>>>>> 858927630a8b7038e28ac8a9e6a8598b1d88e168
