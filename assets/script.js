@@ -27,4 +27,3 @@ function getFoodApi() {
 
 $("#foodActivityButton").on("click", getBoredApi);
 $("#foodActivityButton").on("click", getFoodApi);
-
