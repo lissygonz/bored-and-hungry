@@ -1,31 +1,34 @@
-var repoList = document.querySelector('ul');
 
-function getApibored() {
-  // Replace `octocat` with anyone else's GitHub username
-  var requestUrl = 'https://foodish-api.herokuapp.com/images/api/#';
+var urlFoodApi = 'https://foodish-api.herokuapp.com/api/';
+var urlActivityApi = 'http://www.boredapi.com/api/activity/';
+var apiContainerEl = $('#apiContainer')
+
+function getBoredApi() {
+  var requestUrl = 'http://www.boredapi.com/api/activity/';
 
   fetch(requestUrl)
-    .then(function(response) {
+    .then(function(response){
       return response.json();
     })
     .then(function(data) {
-      console.log(data)
+       console.log(data.activity);
+       var h3 = $('<h3>').text(data.activity);
+       $('#apiContainer').append(h3);
     });
 }
-
-fetchButton.addEventListener('click', getApibored);
-
-function getApihungry() {
-  // Replace `octocat` with anyone else's GitHub username
-  var requestUrl = 'https://foodish-api.herokuapp.com/images/api/#';
+function getFoodApi() {
+  var requestUrl = 'https://foodish-api.herokuapp.com/api/';
 
   fetch(requestUrl)
-    .then(function(response) {
+    .then(function(response){
       return response.json();
     })
     .then(function(data) {
-      console.log(data)
+       console.log(data.image);
+       var img = $("#image").attr("src", data.image)
+       $('#apiContainer').append(img);
     });
 }
 
-fetchButton.addEventListener('click', getApihungry);
+$("#activityButton").on("click", getBoredApi());
+$("#activityButton").on("click", getFoodApi());
