@@ -1,14 +1,13 @@
 
 function getBoredApi() {
   var requestUrl = 'http://www.boredapi.com/api/activity/';
-
   fetch(requestUrl)
     .then(function(response){
       return response.json();
     })
     .then(function(data) {
        console.log(data.activity);
-       var h3 = $('<h3>').text(data.activity);
+       var h3 = $("#h3").text(data.activity);
        $('#apiContainer').append(h3);
     });
 }
@@ -26,5 +25,6 @@ function getFoodApi() {
     });
 }
 
-$("#activityButton").on("click", getBoredApi());
-$("#foodButton").on("click", getFoodApi());
+$("#foodActivityButton").on("click", getBoredApi);
+$("#foodActivityButton").on("click", getFoodApi);
+
