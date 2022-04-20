@@ -1,8 +1,4 @@
 
-var urlFoodApi = 'https://foodish-api.herokuapp.com/api/';
-var urlActivityApi = 'http://www.boredapi.com/api/activity/';
-var apiContainerEl = $('#apiContainer')
-
 function getBoredApi() {
   var requestUrl = 'http://www.boredapi.com/api/activity/';
 
@@ -31,4 +27,4 @@ function getFoodApi() {
 }
 
 $("#activityButton").on("click", getBoredApi());
-$("#activityButton").on("click", getFoodApi());
+$("#foodButton").on("click", getFoodApi());
