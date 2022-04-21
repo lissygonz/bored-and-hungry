@@ -16,15 +16,17 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="./assets/skeleton.css">
+
+  
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!--<link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 <body>
@@ -33,17 +35,25 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
+      <div class="column" style="margin-top: 5%">
         <h1>Bored & Hungry</h1>
         <p>This site here provides you a solution to these both problems, click here to see what you will do and eat today!</p>
+      </div>
+
+      <div id="apiContainer">
+        <button id="foodActivityButton">Food and Activity Button</button>
+        
+        <button id="storage">Save Activity and Food</button>
+        <button id="history">See Your Activity and Food</button>
+        <img id="image" width="700" height="700" src="" alt="">
+        <h3 id="h3"></h3>
       </div>
     </div>
   </div>
 
 
-  <button>Food Button</button>
-  <button>Activity Button</button>
+  
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="./assets/script.js"></script>
+  <script src="./assets/script.js"></script>
 </body>
 </html>
