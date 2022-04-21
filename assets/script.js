@@ -61,4 +61,13 @@ function saveButton() {
 //event listener for button to get activity and food image 
 $("#foodActivityButton").on("click", getBoredApi);
 $("#foodActivityButton").on("click", getFoodApi);
+<<<<<<< HEAD
 $("#storage").on("click", saveButton);
+=======
+
+
+
+//set submission for local storage
+localStorage.setItem("response", JSON.stringify(response));
+
+>>>>>>> b892628948425816dfef36c0c5d42a389aac67d3
