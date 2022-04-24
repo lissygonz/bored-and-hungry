@@ -1,6 +1,7 @@
 var image = 0;
 var activity = 0;
 var historyTest = [];
+const apiKey = "9319583f09msh1867038f13b6972p19a9c0jsnb8d29d2b9b68"
 
 
 
@@ -21,21 +22,18 @@ function getBoredApi() {
     });
 }//function to get food image
 function getFoodApi() {
-  var requestUrl = 'https://foodish-api.herokuapp.com/api/';
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      image = data.image;
-      console.log(data.image);
-      var img = $("#image").attr("src", data.image)
-      $('#apiContainer').append(img);
-
-
-
-    });
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+      'X-RapidAPI-Key': '9319583f09msh1867038f13b6972p19a9c0jsnb8d29d2b9b68'
+    }
+  };
+  
+  fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
 }
 function saveButton() {
   var user = {
