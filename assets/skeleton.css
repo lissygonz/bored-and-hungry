@@ -130,11 +130,11 @@ body {
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 400; 
-  text-align: center;
+  text-align: center; */
 }
 h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
 h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
@@ -152,12 +152,6 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   h5 { font-size: 2.4rem; }
   h6 { font-size: 1.5rem; }
 }
-
-p {
-  margin-top: 0;
-  text-align: center; 
-}
-
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -420,3 +414,30 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+
+/* OUR WORK */
+
+*
+h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 400; 
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 100px;
+}
+
+p {
+  margin-top: 0;
+  text-align: center; 
+  font-size: 18px;
+}
+
+button {
+  color: white;
+  background-color: rgb(199, 40, 40);
+
+}
+
+
