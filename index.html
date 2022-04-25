@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- Basic Page Needs
@@ -16,13 +17,14 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-  
+
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<link rel="stylesheet" href="./assets/skeleton.css">
+  <link rel="stylesheet" href="./assets/skeleton.css">
+  <link rel="stylesheet" href="./assets/style.css">
 
-  
+
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,8 +38,21 @@
   <div class="container">
     <div class="row">
       <div class="column" style="margin-top: 5%">
-        <h1>Bored & Hungry</h1>
-        <p>This site here provides you a solution to these both problems, click here to see what you will do and eat today!</p>
+        <h1>Bored & Hungry?</h1>
+        <p>This generator will provide you with an activity and a food recipe. Fill out the form below with how many
+          people will be attending and how long you have to prepare the recipe!</p>
+      </div>
+
+      <!-- Form Starts Here -->
+      <div class="party-size">
+        <h2>Fill Out Below</h2>
+        <form>
+          <label for="how-many">How many is in your party?</label>
+          <input type="text" id="how-many" placeholder="Insert a number 1-5" />
+          <label for="cook-time">How much time do you have to cook?</label>
+          <input type="text" id="cook-time" placeholder="Minutes to cook" />
+          <button type="results">Results</button>
+        </form>
       </div>
 
       <div id="apiContainer">
@@ -51,7 +66,7 @@
     </div>
   </div>
 
-<!-- Form Starts Here -->
+  <!-- Form Starts Here
   <div class="party-size">
     <h2>Fill Out Here</h2>
     <form>
@@ -61,9 +76,10 @@
       <input type="text" id="cook-time" placeholder="How much time do you have to cook?" />
       <button type="results">Results</button>
     </form>
-  </div>
-  
+  </div> -->
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./assets/script.js"></script>
-</body>
+  </body>
+
 </html>
