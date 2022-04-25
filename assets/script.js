@@ -12,6 +12,7 @@ function getBoredApi() {
       return response.json();
     })
     .then(function (data) {
+      $('#subContainer').empty()
       activity = data.activity;
       console.log(data.activity);
       var activity = data.activity
@@ -36,14 +37,12 @@ function getFoodApi() {
     })
     .then(function (data) {
       console.log(data);
-      $('#subContainer').empty()
       var icon = data.recipes[0].image
       var image = $("<img>").attr("src", icon);
-      var recipe = data.recipe[0].instructions
-      var precipe = $("<p>").text(recipe)
+      var recipe = data.recipes[0].sourceUrl
+      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
       $('#subContainer').append(image);
-      $('#subContainer').append(precipe);
-
+      $('#subContainer').append(linkRecipe);
     });
 }
 function saveButton() {
