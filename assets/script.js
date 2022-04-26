@@ -3,6 +3,14 @@ var activity = 0;
 var historyTest = [];
 const apiKey = "9319583f09msh1867038f13b6972p19a9c0jsnb8d29d2b9b68"
 
+function start(e) {
+  e.preventDefault();
+  var cookTime = $('#cook-time').val();
+  console.log(cookTime);
+  var howMany = $('#how-many').val();
+  getBoredApi(howMany);
+  getFoodApi(cookTime);
+}
 
 //function to get activity
 function getBoredApi(howMany) {
@@ -22,7 +30,7 @@ function getBoredApi(howMany) {
 }
 
 //function to get food image
-function getFoodApi() {
+function getFoodApi(cookTimeF) {
   const options = {
     method: 'GET',
     headers: {
@@ -36,16 +44,37 @@ function getFoodApi() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      var title = data.recipes[0].title
-      var h2 = $("<h2>").text(title)
-      var icon = data.recipes[0].image
-      var image = $("<img>").attr("src", icon);
-      var recipe = data.recipes[0].sourceUrl
-      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
-      $('#subContainer').append(image);
-      $('#subContainer').append(linkRecipe);
-      $('#subContainer').append(title);
+      function getRecipe() {
+        var title = data.recipes[0].title
+        var h2 = $("<h2>").text(title)
+        var icon = data.recipes[0].image
+        var image = $("<img>").attr("src", icon);
+        var recipe = data.recipes[0].sourceUrl
+        var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
+        $('#subContainer').append(h2);
+        $('#subContainer').append(image);
+        $('#subContainer').append(linkRecipe);
+      }
+
+      var cookTimeApi = data.recipes[0].readyInMinutes
+      console.log(data.recipes[0].readyInMinutes)
+
+      console.log(cookTimeF);
+
+      if (cookTimeF == "") {
+        getRecipe();
+      }
+      else {
+        if (cookTimeApi <= cookTimeF) {
+          getRecipe();
+          
+        }
+        else {
+          getFoodApi(cookTimeF)
+        }
+      }
+      cookTimeF = "";
+      console.log(cookTimeF);
     });
 }
 function saveButton() {
@@ -64,10 +93,4 @@ function saveButton() {
 $("#foodActivityButton").on("click", start);
 $("#storage").on("click", saveButton);
 
-function start(e){
-  e.preventDefault();
-  var howMany = $('#how-many').val();
-  var cookTime = $('#cook-time').val();
-  getBoredApi(howMany);
-  getFoodApi();
-}
+
