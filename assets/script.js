@@ -10,6 +10,9 @@ function start(e) {
   var howMany = $('#how-many').val();
   getBoredApi(howMany);
   getFoodApi(cookTime);
+  $('#img-col').empty()
+  $('#text-col').empty()
+  $('#link-col').empty()
 }
 
 //function to get activity
@@ -20,12 +23,12 @@ function getBoredApi(howMany) {
       return response.json();
     })
     .then(function (data) {
-      $('#subContainer').empty()
+      $('#activities-item-container').empty()
       activity = data.activity;
       console.log(data.activity);
       var activity = data.activity
       var h3 = $("<h3>").text(activity);
-      $('#subContainer').append(h3);
+      $('#activities-item-container').append(h3);
     });
 }
 
@@ -45,17 +48,17 @@ function getFoodApi(cookTimeF) {
     })
     .then(function (data) {
       function getRecipe() {
-        var title = data.recipes[0].title
-        var h2 = $("<h2>").text(title)
-        var icon = data.recipes[0].image
-        var image = $("<img>").attr("src", icon);
-        var recipe = data.recipes[0].sourceUrl
-        var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
-        $('#subContainer').append(h2);
-        $('#subContainer').append(image);
-        $('#subContainer').append(linkRecipe);
+      console.log(data);
+      var title = data.recipes[0].title
+      var h2 = $("<h2>").text(title).css({"font-size": "40px"});
+      var icon = data.recipes[0].image
+      var image = $("<img>").attr("src", icon).css({"width": "400px", "border-radius": "20px"});
+      var recipe = data.recipes[0].sourceUrl
+      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).css({"padding": "5px 5px 5px 5px", "background-color": "rgb(199, 40, 40)", "text-decoration": "none", "color": "white",});
+      $('#img-col').append(image);
+      $('#text-col').append(h2);
+      $('#text-col').append(linkRecipe);
       }
-
       var cookTimeApi = data.recipes[0].readyInMinutes
       console.log(data.recipes[0].readyInMinutes)
 
