@@ -5,8 +5,8 @@ const apiKey = "9319583f09msh1867038f13b6972p19a9c0jsnb8d29d2b9b68"
 
 
 //function to get activity
-function getBoredApi() {
-  var requestUrl = 'http://www.boredapi.com/api/activity/';
+function getBoredApi(howMany) {
+  var requestUrl = 'http://www.boredapi.com/api/activity?participants=' + howMany;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -37,12 +37,15 @@ function getFoodApi() {
     })
     .then(function (data) {
       console.log(data);
+      var title = data.recipes[0].title
+      var h2 = $("<h2>").text(title)
       var icon = data.recipes[0].image
       var image = $("<img>").attr("src", icon);
       var recipe = data.recipes[0].sourceUrl
       var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
       $('#subContainer').append(image);
       $('#subContainer').append(linkRecipe);
+      $('#subContainer').append(title);
     });
 }
 function saveButton() {
@@ -57,8 +60,14 @@ function saveButton() {
 };
 
 //event listener for button to get activity and food image 
-$("#foodActivityButton").on("click", getBoredApi);
-$("#foodActivityButton").on("click", getFoodApi);
+
+$("#foodActivityButton").on("click", start);
 $("#storage").on("click", saveButton);
 
-
+function start(e){
+  e.preventDefault();
+  var howMany = $('#how-many').val();
+  var cookTime = $('#cook-time').val();
+  getBoredApi(howMany);
+  getFoodApi();
+}
