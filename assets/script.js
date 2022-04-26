@@ -3,6 +3,17 @@ var activity = 0;
 var historyTest = [];
 const apiKey = "9319583f09msh1867038f13b6972p19a9c0jsnb8d29d2b9b68"
 
+function start(e) {
+  e.preventDefault();
+  var cookTime = $('#cook-time').val();
+  console.log(cookTime);
+  var howMany = $('#how-many').val();
+  getBoredApi(howMany);
+  getFoodApi(cookTime);
+  $('#img-col').empty()
+  $('#text-col').empty()
+  $('#link-col').empty()
+}
 
 //function to get activity
 function getBoredApi(howMany) {
@@ -12,17 +23,17 @@ function getBoredApi(howMany) {
       return response.json();
     })
     .then(function (data) {
-      $('#subContainer').empty()
+      $('#activities-item-container').empty()
       activity = data.activity;
       console.log(data.activity);
       var activity = data.activity
       var h3 = $("<h3>").text(activity);
-      $('#subContainer').append(h3);
+      $('#activities-item-container').append(h3);
     });
 }
 
 //function to get food image
-function getFoodApi() {
+function getFoodApi(cookTimeF) {
   const options = {
     method: 'GET',
     headers: {
@@ -36,16 +47,37 @@ function getFoodApi() {
       return response.json();
     })
     .then(function (data) {
+      function getRecipe() {
       console.log(data);
       var title = data.recipes[0].title
-      var h2 = $("<h2>").text(title)
+      var h2 = $("<h2>").text(title).css({"font-size": "40px"});
       var icon = data.recipes[0].image
-      var image = $("<img>").attr("src", icon);
+      var image = $("<img>").attr("src", icon).css({"width": "400px", "border-radius": "20px"});
       var recipe = data.recipes[0].sourceUrl
-      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe);
-      $('#subContainer').append(image);
-      $('#subContainer').append(linkRecipe);
-      $('#subContainer').append(title);
+      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).css({"padding": "5px 5px 5px 5px", "background-color": "rgb(199, 40, 40)", "text-decoration": "none", "color": "white",});
+      $('#img-col').append(image);
+      $('#text-col').append(h2);
+      $('#text-col').append(linkRecipe);
+      }
+      var cookTimeApi = data.recipes[0].readyInMinutes
+      console.log(data.recipes[0].readyInMinutes)
+
+      console.log(cookTimeF);
+
+      if (cookTimeF == "") {
+        getRecipe();
+      }
+      else {
+        if (cookTimeApi <= cookTimeF) {
+          getRecipe();
+          
+        }
+        else {
+          getFoodApi(cookTimeF)
+        }
+      }
+      cookTimeF = "";
+      console.log(cookTimeF);
     });
 }
 function saveButton() {
@@ -64,10 +96,4 @@ function saveButton() {
 $("#foodActivityButton").on("click", start);
 $("#storage").on("click", saveButton);
 
-function start(e){
-  e.preventDefault();
-  var howMany = $('#how-many').val();
-  var cookTime = $('#cook-time').val();
-  getBoredApi(howMany);
-  getFoodApi();
-}
+
