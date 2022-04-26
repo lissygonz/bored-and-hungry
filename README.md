@@ -24,7 +24,7 @@
 [Bored and Hungry]()
 
 ## Collaborators 
-[Lisette Gonzalez](https://github.com/lissygonz)
-[Rodolfo Cabrera](https://github.com/rodolfopoly)
-[Brian Hernandez](https://github.com/HdezB)
-[Megan Silva](https://github.com/megansilva) 
+- [Lisette Gonzalez](https://github.com/lissygonz)
+- [Rodolfo Cabrera](https://github.com/rodolfopoly)
+- [Brian Hernandez](https://github.com/HdezB)
+- [Megan Silva](https://github.com/megansilva) 
