@@ -17,8 +17,8 @@
 </ul>
 
 ## Screenshots
-<img src="" alt="">
-<img src="" alt="">
+<img src="./assets/images/screenshot1.jpg" alt="">
+<img src="./assets/images/screenshot2.jpg" alt="">
 <img src="" alt="">
 <img src="" alt="">
 
