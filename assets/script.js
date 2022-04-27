@@ -91,8 +91,8 @@ function saveButton() {
     recipe: recipe
   };
   $('#img-col-r1').empty()
+  $('#activities-item-container-r1').empty()
   $('#text-col-r1').empty()
-  $('#link-col-r1').empty()
   // set new submission to local storage
 
   if (result == true)
@@ -101,14 +101,12 @@ function saveButton() {
     localStorage.setItem("historyTest", JSON.stringify(historyTest));
        //var historyTmp = localStorage.getItem("historyTest");
       console.log(historyTest[historyTest.length-1].activity);
-       var h2 = $("<h2>").text(historyTest[0].activity).css({"font-size": "10px"});
+       var h2 = $("<h2>").text(activity).css({"font-size": "10px"});
        var image = $("<img>").attr("src", icon).css({"width": "40px", "border-radius": "20px"});
        var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).css({"padding": "5px 5px 5px 5px", "background-color": "rgb(199, 40, 40)", "text-decoration": "none", "color": "white",});
              $('#img-col-r1').append(image);
-             $('#text-col-r1').append(h2);
+             $('#activities-item-container-r1').append(h2);
              $('#text-col-r1').append(linkRecipe);
-       
-       
    }
    else{
 
