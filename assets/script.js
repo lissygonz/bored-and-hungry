@@ -83,31 +83,41 @@ function getFoodApi(cookTimeF) {
     });
 }
 function saveButton() {
-  var user = {
-    activity: activity,
-    image: icon,
-    title: title,
-    recipe: recipe
-  };
+
   $("#img-col-r1").empty()
   $("#activities-item-container-r1").empty()
   $("#text-col-r1").empty()
   // set new submission to local storage
+
+  for (var i = 1; i < 3; i++) {
   if (result == true)
    {
+     var historyTest = JSON.parse(localStorage.getItem("historyTest")) || [];
+
+     var user = {
+      activity: activity,
+      image: icon,
+      title: title,
+      recipe: recipe
+    };
+
     historyTest.push(user);
     localStorage.setItem("historyTest", JSON.stringify(historyTest));
        //var historyTmp = localStorage.getItem(“historyTest”);
       console.log(historyTest[historyTest.length-1].activity);
-       var h2 = $("<h2>").text(activity).css({"font-size": "10px"});
-       var image = $("<img>").attr("src", icon).css({"width": "40px", "border-radius": "20px"});
-       var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).css({"padding": "5px 5px 5px 5px", "background-color": "rgb(199, 40, 40)", "text-decoration": "none", "color": "white",});
-             $("#img-col-r1").append(image);
-             $("#activities-item-container-r1").append(h2);
-             $("#text-col-r1").append(linkRecipe);
+
+      var newDiv = $("<div>");
+      var image = $("<img>").attr("src", user.activity).css({"width": "40px", "border-radius": "20px"});
+      console.log(user.activity);
+      var h2 = $("<h2>").text(activity).css({"font-size": "10px"});
+      var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).css({"padding": "5px 5px 5px 5px", "background-color": "rgb(199, 40, 40)", "text-decoration": "none", "color": "white",});
+    
+      newDiv.append(h2, image, linkRecipe);
+      $("#recent-items").append(newDiv);
    }
    else{
    }
+  }
 };
 
 //event listener for button to get activity and food image 

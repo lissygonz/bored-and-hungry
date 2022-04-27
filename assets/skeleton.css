@@ -1032,6 +1032,7 @@ body {
   }
 
   .icon-2 {
+    display: contents;
     width: 300px;
     right: 1%;
     top: 20%;
