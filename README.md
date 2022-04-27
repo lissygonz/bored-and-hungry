@@ -17,10 +17,11 @@
 </ul>
 
 ## Screenshots
-<img src="./assets/images/screenshot1.jpg" alt="">
-<img src="./assets/images/screenshot2.jpg" alt="">
-<img src="" alt="">
-<img src="" alt="">
+<img src="./assets/images/screenshot4.jpg" alt="Our entire project">
+<img src="./assets/images/screenshot1.jpg" alt="A portion of the project that shoes the title and the instructions">
+<img src="./assets/images/screenshot2.jpg" alt="Shows where the meals will show up">
+<img src="./assets/images/screenshot3.jpg" alt="Shows where the activities will show up">
+
 
 ## Links
 
