@@ -2,8 +2,7 @@
 
 ## Description
 <p> 
-    We created a generator that provides users with an activity to do and a recipe to make.
-    Insert a number from 1-5 for people in your party and a preparation time and it will generate one for you!
+    We created a generator that provides users with an activity to do and a recipe to make. Insert a number from 1-5 for people in your party and a preparation time and it will generate one for you!
 </p>
 
 
@@ -18,6 +17,10 @@
 </ul>
 
 ## Screenshots
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
 
 ## Links
 
