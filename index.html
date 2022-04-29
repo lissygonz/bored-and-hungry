@@ -3,90 +3,91 @@
 
 <head>
 
-    <!-- Basic Page Needs
+  <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
-    <title>Bored and Hungry</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <title>Bored and Hungry</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Mobile Specific Metas
+  <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- FONT
+  <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
 
-    <!-- CSS
+  <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="./assets/skeleton.css">
-    <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/skeleton.css">
+  <link rel="stylesheet" href="./assets/style.css">
 
 
 
-    <!-- Favicon
+  <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <!--<link rel="icon" type="image/png" href="images/favicon.png">
+  <!--<link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body>
+
 
   <!- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div id="color-change">
-        <div class="md-twelve lg-four columns">
-            <h1>Bored & Hungry?</h1>
-            <p>This generator will provide you with an activity and a food recipe. Fill out the form below with how many
-                people will be attending and how long you have to prepare the recipe!</p>
+
+<body class="card-silver">
+  <div>
+    <div class="md-twelve lg-four columns">
+      <h1>Bored & Hungry?</h1>
+      <p>This generator will provide you with an activity and a food recipe. Fill out the form below with how many
+        people will be attending and how long you have to prepare the recipe!</p>
 
 
-            <!-- Form Starts Here -->
-            <div class="u-text-center">
-                <form>
-                    <h3>FILL OUT BELOW</h3>
-                    <label for="how-many">HOW MANY ARE IN YOUR PARTY?</label>
-                    <input type="text" id="how-many" placeholder="Insert a number 1-5" />
-                    <label for="cook-time">HOW MUCH TIME DO YOU HAVE TO COOK?</label>
-                    <input type="text" id="cook-time" placeholder="Minutes to cook" />
-                    <button id="foodActivityButton" class="button-danger u-center-block">Results</button>
+      <!-- Form Starts Here -->
+      <div class="u-text-center">
+        <form>
+          <h3>FILL OUT BELOW</h3>
+          <label for="how-many">HOW MANY ARE IN YOUR PARTY?</label>
+          <input type="text" id="how-many" placeholder="Insert a number 1-5" />
+          <label for="cook-time">HOW MUCH TIME DO YOU HAVE TO COOK?</label>
+          <input type="text" id="cook-time" placeholder="Minutes to cook" />
+          <button id="foodActivityButton" class="button u-center-block">Results</button>
+      </div>
+      </form>
+    </div>
+
+    <div class="row u-text-center md-twelve lg-eight columns">
+      <div class="card card-yellow">
+        <h4>MEALS</h4>
+        <div class="container">
+          <div class="row">
+            <div class="md-six lg-five columns">
+              <div id="img-col"></div>
             </div>
-            </form>
+            <div class="md-six lg-seven columns">
+              <div id="text-col" class="u-text-center"></div>
+            </div>
+            <div id="link-col"></div>
+          </div>
         </div>
-
-        <div class="row u-text-center md-twelve lg-eight columns">
-            <div class="card">
-                <h4>MEALS</h4>
-                <div class="container">
-                    <div class="row">
-                        <div class="md-six lg-five columns">
-                            <div id="img-col"></div>
-                        </div>
-                        <div class="md-six lg-seven columns">
-                            <div id="text-col" class="u-text-center"></div>
-                        </div>
-                        <div id="link-col"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h4>ACTIVITIES</h4>
-                <div id="activities-item-container"></div>
-            </div>
-            <div>
-                <button id="storage" class="button-danger">Save Activity and Food</button>
-            </div>
-        </div>
-        <div class="twelve columns u-text-center">
-            <h2>Recent Results</h2>
-            <div class="recents-container">
-                <div class="row" id="recent-items"></div>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="./assets/script.js"></script>
-        </body>
+      </div>
+      <div class="card card-yellow">
+        <h4>ACTIVITIES</h4>
+        <div id="activities-item-container"></div>
+      </div>
+      <div>
+        <button id="storage" class="button">Save Activity and Food</button>
+      </div>
+    </div>
+    <div class="twelve columns u-text-center">
+      <h2>Recent Results</h2>
+      <div class="recents-container">
+        <div class="row" id="recent-items"></div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
 
 </html>

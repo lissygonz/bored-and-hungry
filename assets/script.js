@@ -57,7 +57,7 @@ function getFoodApi(cookTimeF) {
                 icon = data.recipes[0].image
                 var image = $("<img>").attr("src", icon).addClass("u-img-responsive")
                 recipe = data.recipes[0].sourceUrl
-                var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).addClass("button")
+                var linkRecipe = $("<a>").text("Link to recipe").attr("href", recipe).addClass("button-white")
                 $('#img-col').append(image);
                 $('#text-col').append(h2);
                 $('#link-col').append(linkRecipe);
@@ -107,7 +107,7 @@ function saveButton() {
         $("#recent-items").empty()
         for (var i = 0; i < 3; i++) {
             var newDiv = $("<div>").addClass("four columns");
-            var cardDiv = $("<div>").addClass("card");
+            var cardDiv = $("<div>").addClass("card card-yellow");
             var activitySectionDiv = $("<div>");
             var activitySectionTitle = $("<h5>").text("Activity").addClass("u-text-center");
             var recipeSectionDiv = $("<div>");
@@ -115,7 +115,7 @@ function saveButton() {
             var image = $("<img>").attr("src", historyTest[historyTest.length - (i + 1)].image).addClass("u-img-responsive");
             var title = $("<h3>").text(historyTest[historyTest.length - (i + 1)].title);
             var h2 = $("<h3>").text(historyTest[historyTest.length - (i + 1)].activity)
-            var linkRecipe = $("<a>").text("Link to recipe").attr("href", historyTest[historyTest.length - (i + 1)].recipe).addClass("button u-center-block");
+            var linkRecipe = $("<a>").text("Link to recipe").attr("href", historyTest[historyTest.length - (i + 1)].recipe).addClass("button-white u-center-block")
 
             activitySectionDiv.append(activitySectionTitle, h2);
             recipeSectionDiv.append(recipeSectionTitle, image, title);
