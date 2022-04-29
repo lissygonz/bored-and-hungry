@@ -21,7 +21,7 @@ function start(e) {
 
 //function to get activity
 function getBoredApi(howMany) {
-    var requestUrl = 'http://www.boredapi.com/api/activity?participants=' + howMany;
+    var requestUrl = 'https://www.boredapi.com/api/activity?participants=' + howMany;
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
